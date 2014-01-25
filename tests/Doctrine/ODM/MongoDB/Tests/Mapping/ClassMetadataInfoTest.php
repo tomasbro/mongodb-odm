@@ -234,6 +234,26 @@ class ClassMetadataInfoTest extends \Doctrine\ODM\MongoDB\Tests\BaseTest
             'simple' => true,
         ));
     }
+
+    public function testAddInheritedAssociationMapping()
+    {
+        $cm = new ClassMetadataInfo('stdClass');
+
+        $mapping = array(
+            'fieldName' => 'assoc',
+            'reference' => true,
+            'type' => 'one',
+            'simple' => true,
+        );
+
+        $cm->addInheritedAssociationMapping($mapping);
+
+        $expected = array(
+            'assoc' => $mapping,
+        );
+
+        $this->assertEquals($expected, $cm->associationMappings);
+    }
 }
 
 class TestCustomRepositoryClass extends DocumentRepository
