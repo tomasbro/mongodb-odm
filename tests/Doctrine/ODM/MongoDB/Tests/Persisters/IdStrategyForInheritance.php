@@ -18,7 +18,7 @@ class IdStrategyForInheritanceTest extends BaseTest
         parent::tearDown();
     }
 
-    public function testDereferenceManyWithSetStrategyDoesNotUnsetFirst()
+    public function testOverrideIdStrategy()
     {
         $childObj = new ChildClass();
         $childObj->name = 'ChildObject';
