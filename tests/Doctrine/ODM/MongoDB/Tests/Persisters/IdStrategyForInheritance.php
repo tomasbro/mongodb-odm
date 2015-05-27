@@ -46,7 +46,4 @@ class ChildClass extends ParentClass
 {
     /** @ODM\Id(strategy="AUTO") */
     public $id;
-
-    /** @ODM\String */
-    public $subject;
 }
